@@ -1,12 +1,19 @@
-// Require express and create a router
+const express = require('express');
+const router = express.Router();
 
-// Require your controller
-// const db = ...
+const {
+  getTasks,
+  addTask,
+  toggleTask,
+  deleteTask,
+} = require('../controllers/dbController');
 
-// Wire each of the following routes to its controller method:
-// GET    /tasks         => db.getTasks
-// POST   /tasks         => db.addTask
-// PATCH  /tasks/:id     => db.toggleTask
-// DELETE /tasks/:id     => db.deleteTask
+router.get('/tasks', getTasks);
 
-// Export the router
+router.post('/tasks', addTask);
+
+router.patch('/tasks/:id', toggleTask);
+
+router.delete('/tasks/:id', deleteTask);
+
+module.exports = router;

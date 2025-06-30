@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# קבצי סביבה מקומיים - חשוב לא לכלול ב-Git!
+.env
+
+# תיקיות מודולי Node.js
+node_modules/
